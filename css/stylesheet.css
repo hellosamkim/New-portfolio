@@ -1,0 +1,491 @@
+body, html {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background: url("img/home2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.details {
+  width: 100%;
+}1
+
+/*nav*/
+nav {
+  position: fixed;
+  float: left;
+  width: 100%;
+  z-index: 10000;
+}
+
+#menu {
+  visibility: hidden;
+  background-color: rgba(0,0,0,0.3);
+}
+
+#menu a {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  text-decoration: none;
+  font-size: 45px;
+  color: rgba(255,255,255,0.9);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#menu a:hover {
+  text-shadow: 2.8px 2.8px #fff;
+}
+
+nav ul {
+  padding: 0px;
+  text-align: center;
+  margin-top: 0px;
+}
+nav li {
+  display: block;
+}
+
+button {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  margin: 45px 45px;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: 1.2px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: background 0.3s;
+  visibility: hidden;
+  background: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+button:focus, button:hover {
+  border: 1.2px solid rgba(255,255,255,0.9);
+  outline: none;
+  box-shadow: none;
+
+}
+
+button span {
+  display: block;
+  position: absolute;
+  top: 21px;
+  left: 15px;
+  right: 15px;
+  height: 1.4px;
+  background: rgba(255,255,255,0.9);
+}
+
+button span::before,
+button span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 1.4px;
+  background-color: rgba(255,255,255,0.9);
+  content: "";
+}
+
+button span::before {
+  top: 7px;
+}
+
+button span::after {
+  bottom: 7px;
+}
+
+button span {
+  transition: background 0s 0.3s;
+}
+
+button span::before,
+button span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+
+button span::before {
+  transition-property: top, transform;
+}
+
+button span::after {
+  transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+button.is-active {
+}
+
+button.is-active span {
+  background: none;
+}
+
+button.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+button.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+button.is-active span::before,
+button.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
+
+#logo-wrap {
+  width: 60px;
+  height: 60px;
+  margin: 40px 55px;
+  position: fixed;
+  opacity: 0.6;
+  -webkit-transition: all 0.3;
+  -moz-transition: all 0.3;
+  transition: all 0.3;
+}
+
+#logo-wrap:hover {
+  opacity: 0.75;
+}
+
+#logo {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  visibility: hidden;
+  background: url('img/logo.png') no-repeat;
+  background-size: contain;
+}
+
+/*body sections*/
+
+#home {
+  background-position: 0 -90px;
+  display: none;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.33);
+}
+
+/*home*/
+#head-1, #head-2 {
+  position: absolute;
+  margin-top: 50px;
+  left: 140px;
+  font-size: 75px;
+  color: #222;
+  font-weight: 700;
+}
+
+#head-2 {
+  margin-top: 220px;
+  left: auto;
+  right: 140px;
+}
+
+#name, #menu, #name-intro {
+  position: absolute;
+  width: 135px;
+  height: 135px;
+  border: double white;
+  border-width: 3px;
+  padding: 15px;
+  padding-top: 18px;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  visibility: hidden;
+}
+
+#menu {
+  position: fixed;
+  z-index: 100000;
+}
+
+#name-intro {
+  border: none;
+  height: 195px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  color: rgba(255,255,255,0.48);
+  width: 300px;
+}
+
+#name-intro div {
+  bottom: 0px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+#name-intro span {
+  padding: 8px;
+}
+
+#name-intro i {
+  padding-right: 3px;
+}
+
+#home #down {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  right: 0;
+  left: 0;
+  bottom: 30px;
+  margin: auto;
+  color: rgba(255,255,255,0.4);
+  font-size: 28px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#down {
+  width: 150px !important;
+  text-decoration: none !important;
+}
+
+#down .mob-only {
+  font-size: 13px;
+  display: none;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+}
+
+#home #down:hover {
+  color: rgba(255,255,255,0.95);
+}
+
+#name h2 {
+  margin: 0px;
+  color: rgba(255,255,255,0.9);
+  text-align: right;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  font-size: 53px;
+  margin-bottom: -8px;
+  visibility: hidden;
+  padding-right: 12.5px;
+}
+
+#name-1 span:nth-child(2) {
+  margin-right: -3.5px;
+  padding-left: 10px;
+}
+
+#name span {
+  padding-left: 5px;
+}
+
+/*about page*/
+#wrap-2 {
+  background-color: rgba(0,0,0,0.78);
+}
+
+#pic {
+  width: 100%;
+  text-align: center;
+}
+
+#intro #me-img, #intro #img-mask, #intro #dog-img, #intro #toronto-img {
+  background-size: 200px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  margin-top: 30px;
+  border-radius: 100%;
+  position: relative;
+  display: inline;
+  background-image: url('img/sam.jpg');
+  width: 200px;
+  height: 200px;
+  visibility: hidden;
+}
+
+#intro #img-mask {
+  background-image: none;
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+}
+
+#intro #toronto-img {
+  background-image: url('img/toronto.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  background-position: center;
+}
+
+#intro #dog-img {
+  background-image: url('img/coco.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  background-position: center;
+  background-position: 0 -30px;
+}
+
+#me-stuff span {
+  margin: 18px;
+}
+
+#intro #me-stuff h4 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  margin: 10px;
+  color: rgba(255,255,255,0.6);
+  font-size: 20px;
+  visibility: hidden;
+}
+
+#me-details {
+  width: 550px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+  margin-top: -12px;
+  visibility: hidden;
+  line-height: 21px;
+}
+
+#me-details a, #web-dev p a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  -webkit-transition: all 0.3;
+  -moz-transition: all 0.3;
+  transition: all 0.3;
+}
+
+#me-details a:hover, #web-dev p a:hover {
+  color: white;
+  background-color: rgba(212,238,94, 0.09);
+}
+
+#my-passions {
+  width: 95%;
+  margin: 50px auto 0px;
+  visibility: hidden;
+}
+
+#my-passions .head {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  color: rgba(255,255,255,0.45);
+}
+#my-passions .head i {
+  padding-right: 5px;
+}
+#my-passions p {
+  margin-top: 2.3px;
+  text-align: center;
+  color: rgba(255,255,255,0.3);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+}
+
+#web-dev {
+  float: left;
+  width: 49%;
+  height: 100%;
+}
+
+#entrepreneur {
+  float: right;
+  width: 49%;
+  height: 100%;
+}
+
+/*my work*/
+#wrap-3 {
+  overflow: hidden;
+}
+#bg-shape {
+  width: 118%;
+  height: 70%;
+  margin-left: -10%;
+  margin-top: 6%;
+  -webkit-transform: rotate(-11deg);
+  -moz-transform: rotate(-11deg);
+  transform: rotate(-11deg);
+  background-color: rgba(0,0,0,0.3);
+}
+
+/*mobile responsive*/
+@media only screen and (max-width: 500px) {
+  #home {
+    background-position: 0px;
+  }
+
+  button {
+    margin: 20px 20px;
+  }
+
+  #name, #name-intro {
+    top: -100px;
+  }
+
+  .mob-only {
+    display: block !important;
+  }
+}
+
+/*accessories*/
+.highlight {
+  background-color: rgba(212,238,94, 0.09);
+  padding: 0px 2px;
+}
+
+#toronto, #dog, #learn {
+  text-decoration: underline;
+  color: rgba(255,255,255,0.52);
+}
+
+/*medias*/
+@media only screen and (min-width: 321px) {
+    /* Larger mobile styles (wider than 320 pixels) */
+}
+
+@media only screen and (min-width: 600px) {
+    /* Tablet styles (wider than 600 pixels) */
+}
+
+@media only screen and (min-width: 1024px) {
+    /* Large laptop styles (wider than 1024 pixels) */
+}
+
+@media only screen and (min-width: 1140px) {
+    /* Desktop styles (wider than 1140 pixels) */
+}
