@@ -52,8 +52,8 @@ function animates() {
     $('#name-intro').css({'visibility':'visible'});
   }, 5400);
   setTimeout(function() {
-    $('button').addClass('animated fadeIn');
-    $('button').css({'visibility':'visible'});
+    $('nav button').addClass('animated fadeIn');
+    $('nav button').css({'visibility':'visible'});
     $('#logo').addClass('animated fadeIn');
     $('#logo ').css({'visibility':'visible'});
     $('#down').addClass('animated fadeIn');
@@ -99,7 +99,7 @@ $('#me-stuff h4').text("Hello World");
     $('#entrepreneur i').removeClass('fa fa-lightbulb-o');
     $('#entrepreneur .head').text('LEARNING');
     $('#entrepreneur .head').prepend('<i class="fa fa-book"></i>');
-    $('#entrepreneur p').text("I'm currently learning Ember.js while sharpening up my JavaScript skills. During my spare time, I'm exploring the internet affiliate market while studying internet marketing.");
+    $('#entrepreneur p').text("I'm currently learning Ember.js while sharpening up my JavaScript skills. During my spare time, I'm currently exploring internet and affiliate marketing.");
   }, function() {
     $('#entrepreneur i').removeClass('fa fa-book');
     $('#entrepreneur .head').text('ENTREPRENEUR');
@@ -113,9 +113,9 @@ $(window).load(function() {
   $('#home').fadeIn(2500);
 });
 
-// nav button
+// nav nav button
 function nav() {
-  var toggles = document.querySelectorAll("button");
+  var toggles = document.querySelectorAll("nav button");
 
   for (var i = toggles.length - 1; i >= 0; i--) {
     var toggle = toggles[i];
@@ -148,7 +148,7 @@ function nav() {
       }
     });
     $('#menu a').on('click', function() {
-      $('button').removeClass("is-active");
+      $('nav button').removeClass("is-active");
       $('#menu').removeClass('animated flipInY');
       $('#menu').addClass('animated flipOutY');
       setTimeout(function() {
@@ -195,4 +195,20 @@ function accessories() {
   $('#toronto').addClass('animated pulse infinite');
   $('#dog').addClass('animated pulse infinite');
   $('#learn').addClass('animated pulse infinite');
+
+  // carousel
+  $('.projects-wrapper').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear'
+  });
+  $('.project-pics').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
+    // cssEase: 'linear'
+  });
 };

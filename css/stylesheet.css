@@ -11,7 +11,7 @@ body, html {
 
 .details {
   width: 100%;
-}1
+};
 
 /*nav*/
 nav {
@@ -50,13 +50,15 @@ nav li {
   display: block;
 }
 
-button {
-  float: right;
-  position: relative;
+nav button {
+  /* float: right; */
+  position: fixed;
+  z-index: 10000;
   overflow: hidden;
   margin: 45px 45px;
   padding: 0;
   width: 45px;
+  right: 0px;
   height: 45px;
   font-size: 0;
   text-indent: -9999px;
@@ -73,14 +75,14 @@ button {
   transition: all 0.3s;
 }
 
-button:focus, button:hover {
+nav button:focus, nav button:hover {
   border: 1.2px solid rgba(255,255,255,0.9);
   outline: none;
   box-shadow: none;
 
 }
 
-button span {
+nav button span {
   display: block;
   position: absolute;
   top: 21px;
@@ -90,8 +92,8 @@ button span {
   background: rgba(255,255,255,0.9);
 }
 
-button span::before,
-button span::after {
+nav button span::before,
+nav button span::after {
   position: absolute;
   display: block;
   left: 0;
@@ -101,52 +103,52 @@ button span::after {
   content: "";
 }
 
-button span::before {
+nav button span::before {
   top: 7px;
 }
 
-button span::after {
+nav button span::after {
   bottom: 7px;
 }
 
-button span {
+nav button span {
   transition: background 0s 0.3s;
 }
 
-button span::before,
-button span::after {
+nav button span::before,
+nav button span::after {
   transition-duration: 0.3s, 0.3s;
   transition-delay: 0.3s, 0s;
 }
 
-button span::before {
+nav button span::before {
   transition-property: top, transform;
 }
 
-button span::after {
+nav button span::after {
   transition-property: bottom, transform;
 }
 
 /* active state, i.e. menu open */
-button.is-active {
+nav button.is-active {
 }
 
-button.is-active span {
+nav button.is-active span {
   background: none;
 }
 
-button.is-active span::before {
+nav button.is-active span::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-button.is-active span::after {
+nav button.is-active span::after {
   bottom: 0;
   transform: rotate(-45deg);
 }
 
-button.is-active span::before,
-button.is-active span::after {
+nav button.is-active span::before,
+nav button.is-active span::after {
   transition-delay: 0s, 0.3s;
 }
 
@@ -159,6 +161,7 @@ button.is-active span::after {
   -webkit-transition: all 0.3;
   -moz-transition: all 0.3;
   transition: all 0.3;
+  z-index: 10000;
 }
 
 #logo-wrap:hover {
@@ -185,6 +188,7 @@ button.is-active span::after {
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.33);
+  position: relative;
 }
 
 /*home*/
@@ -229,7 +233,7 @@ button.is-active span::after {
   height: 195px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 100;
-  color: rgba(255,255,255,0.48);
+  color: rgba(255,255,255,0.88);
   width: 300px;
 }
 
@@ -362,7 +366,7 @@ button.is-active span::after {
   font-weight: 300;
   text-align: center;
   margin: 10px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.8);
   font-size: 20px;
   visibility: hidden;
 }
@@ -371,7 +375,7 @@ button.is-active span::after {
   width: 550px;
   margin: 0 auto;
   text-align: center;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.55);
   font-family: 'Work Sans', sans-serif;
   font-weight: 200;
   margin-top: -12px;
@@ -380,7 +384,7 @@ button.is-active span::after {
 }
 
 #me-details a, #web-dev p a {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.8);
   text-decoration: none;
   -webkit-transition: all 0.3;
   -moz-transition: all 0.3;
@@ -403,7 +407,7 @@ button.is-active span::after {
   font-weight: 300;
   font-size: 20px;
   text-align: center;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.75);
 }
 #my-passions .head i {
   padding-right: 5px;
@@ -411,7 +415,7 @@ button.is-active span::after {
 #my-passions p {
   margin-top: 2.3px;
   text-align: center;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.42);
   font-family: 'Work Sans', sans-serif;
   font-weight: 200;
 }
@@ -436,11 +440,100 @@ button.is-active span::after {
   width: 118%;
   height: 70%;
   margin-left: -10%;
-  margin-top: 6%;
+  margin-top: 100px;
   -webkit-transform: rotate(-11deg);
   -moz-transform: rotate(-11deg);
   transform: rotate(-11deg);
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.05);
+}
+
+/*carousel*/
+.projects-wrapper {
+  color: rgba(255,255,255,0.8);
+  width: 700px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.projects-wrapper .project {
+  height: 560px;
+  float: left;
+  width: 700px !important;
+  background-color: rgba(0,0,0,0.45);
+  padding: 12px;
+}
+.project .title {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+
+.project-pics {
+  overflow: hidden;
+  height: 376px;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.projects-wrapper .slick-prev, .projects-wrapper .slick-next {
+  display: none !important;
+}
+
+.project .details {
+  max-height: 110px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  text-align: center;
+  color: rgba(255,255,255,0.75);
+}
+
+.project .site, .project .git {
+  display: inline-block;
+  padding: 3px;
+  text-align: center;
+  margin: auto;
+}
+
+.project .links a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.65);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.project .links a:hover {
+  color: rgba(255,255,255,0.8);
+}
+
+.project .site {
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(246,153,99,0.75);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(246,153,99,0.75);
+  box-shadow: 0px 1px 0px 0px rgba(246,153,99,0.75);
+}
+
+.project .git {
+  -webkit-box-shadow: 0px 1px 0px 0px rgba(200,236,180,0.75);
+  -moz-box-shadow: 0px 1px 0px 0px rgba(200,236,180,0.75);
+  box-shadow: 0px 1px 0px 0px rgba(200,236,180,0.75);
+}
+
+.links {
+  text-align: center;
+}
+
+.links span {
+  color: rgba(255,255,255,0.4);
 }
 
 /*mobile responsive*/
@@ -449,7 +542,7 @@ button.is-active span::after {
     background-position: 0px;
   }
 
-  button {
+  nav button {
     margin: 20px 20px;
   }
 
@@ -470,7 +563,7 @@ button.is-active span::after {
 
 #toronto, #dog, #learn {
   text-decoration: underline;
-  color: rgba(255,255,255,0.52);
+  color: rgba(255,255,255,0.7);
 }
 
 /*medias*/
