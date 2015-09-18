@@ -451,7 +451,7 @@ nav button.is-active span::after {
 .projects-wrapper {
   color: rgba(255,255,255,0.8);
   width: 700px;
-  position: absolute;
+  position: fixed;
   top: 30px;
   right: 0;
   bottom: 0;
@@ -461,11 +461,23 @@ nav button.is-active span::after {
 
 .projects-wrapper .project {
   height: 560px;
-  float: left;
   width: 700px !important;
   background-color: rgba(0,0,0,0.45);
   padding: 12px;
+  float: left;
+  display: inline;
+  position: absolute !important;
+  top: 0px !important;
+  right:  0px !important;
+  bottom: 0px !important;
+  left: 0px !important;
+  margin: auto;
 }
+
+.project:focus {
+  outline: none;
+}
+
 .project .title {
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
@@ -481,8 +493,44 @@ nav button.is-active span::after {
   margin: 0 auto;
 }
 
+.projects-wrapper .slick-prev {
+  left: -150px;
+}
+
+.projects-wrapper .slick-next {
+  right: -150px;
+}
+
 .projects-wrapper .slick-prev, .projects-wrapper .slick-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: none;
+  font-size: 50px;
+  color: rgba(255,255,255,0.5);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.projects-wrapper .slick-prev:focus, .projects-wrapper .slick-next:focus {
+  outline: none;
+}
+
+.project-pics .slick-prev, .project-pics .slick-next {
   display: none !important;
+}
+
+.slick-prev i, .slick-next i {
+  cursor: pointer;
+}
+
+.slick-prev i:hover, .slick-next i:hover {
+  color: rgba(255,255,255,0.8);
 }
 
 .project .details {

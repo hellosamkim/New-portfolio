@@ -211,4 +211,11 @@ function accessories() {
     autoplaySpeed: 2000
     // cssEase: 'linear'
   });
+
+  // add next and prev button img to carousel
+  $('.projects-wrapper .slick-prev').empty();
+  $('.projects-wrapper .slick-prev').append('<i class="fa fa-angle-left"></i>');
+  $('.projects-wrapper .slick-next').empty();
+  $('.projects-wrapper .slick-next').append('<i class="fa fa-angle-right"></i>');
+
 };
