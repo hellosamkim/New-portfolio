@@ -99,7 +99,7 @@ $('#me-stuff h4').text("Hello World");
     $('#entrepreneur i').removeClass('fa fa-lightbulb-o');
     $('#entrepreneur .head').text('LEARNING');
     $('#entrepreneur .head').prepend('<i class="fa fa-book"></i>');
-    $('#entrepreneur p').text("I'm currently learning Ember.js while sharpening up my JavaScript skills. During my spare time, I'm currently exploring internet and affiliate marketing.");
+    $('#entrepreneur p').text("I'm currently learning Angular.js while sharpening up my JavaScript skills. During my spare time, I'm currently exploring internet and affiliate marketing.");
   }, function() {
     $('#entrepreneur i').removeClass('fa fa-book');
     $('#entrepreneur .head').text('ENTREPRENEUR');
@@ -165,7 +165,9 @@ function nav() {
 
 function parallexShow() {
   $(window).scroll(function() {
+    // sections show actions
     var imgShow = $('#about').offset().top * 0.2;
+
     if ($('body').scrollTop() > imgShow) {
       setTimeout(function() {
         $('#intro #img-mask').addClass('animated fadeInDown');
@@ -185,8 +187,15 @@ function parallexShow() {
           }, 1000);
         }, 1000);
       }, 200);
-    } else if ($('body').scrollTop() > $('#about').offset().top == true) {
-
+    }
+    if (($('body').scrollTop() > ($('#work').offset().top - 120) == true) && ($('body').scrollTop() < $('#contact').offset().top == true)) {
+      $('.projects-wrapper').removeClass('animated fadeOutDown');
+      $('.projects-wrapper').addClass('animated fadeInUp');
+      $('.projects-wrapper').css({'visibility': 'visible'});
+    } else {
+      $('.projects-wrapper').removeClass('animated fadeIntUp');
+      $('.projects-wrapper').addClass('animated fadeOutDown');
+      $('.projects-wrapper').css({'visibility': 'hidden'});
     }
   });
 };
@@ -200,7 +209,7 @@ function accessories() {
   $('.projects-wrapper').slick({
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 800,
     fade: true,
     cssEase: 'linear'
   });
@@ -208,7 +217,7 @@ function accessories() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 4567
     // cssEase: 'linear'
   });
 
