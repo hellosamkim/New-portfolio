@@ -56,13 +56,17 @@ function animates() {
     $('nav button').css({'visibility':'visible'});
     $('#logo').addClass('animated fadeIn');
     $('#logo ').css({'visibility':'visible'});
-    $('#down').addClass('animated fadeIn');
-    $('#down').css({'visibility':'visible'});
+    $('.down i').addClass('animated fadeIn');
+    $('.down i').css({'visibility':'visible'});
+    $('.up i').addClass('animated fadeIn');
+    $('.up i').css({'visibility':'visible'});
   }, 5800);
   setTimeout(function() {
     $('#name').removeClass('animated flipInX');
-    $('#down').removeClass('animated fadeIn');
-    $('#down').addClass('animated pulse infinite');
+    $('.down i').removeClass('animated fadeIn');
+    $('.down i').addClass('animated pulse infinite');
+    $('.up i').removeClass('animated fadeIn');
+    $('.up i').addClass('animated pulse infinite');
   }, 6500);
   nav();
   $('#toronto').hover(function(){
@@ -106,6 +110,29 @@ $('#me-stuff h4').text("Hello World");
     $('#entrepreneur .head').prepend('<i class="fa fa-lightbulb-o"></i>');
     $('#entrepreneur p').text('I have a strong interest in business and company infrastructures. Ever since a child, I grew up alongside my dad, watching him running his business. While this experience gave me hands-on knowledge regarding small retail businesses, being involved in the tech industry really opened my eyes to the start up world. Since then, I fell in love with the Start Up scene; where creative minds come together and turn disruptive ideas into reality.');
   });
+  $('#email').hover(function(){
+    $('#env-wrap i').animate({fontSize: '50px'});
+    $('#email').css({'background-color':'rgba(200,236,180, 0.8)'});
+    $('#env-wrap').css({'background':'none'});
+    $('#env-wrap i').animate({marginTop: '18px'});
+    $('#email h2').animate({marginTop: '-16px'});
+    $('#email h2').css({'color':'rgba(255,255,255,1)','border-bottom':'1.5px solid rgba(0,0,0, 0.8)'});
+  }, function() {
+    $('#env-wrap i').animate({marginTop: '0px'});
+    $('#env-wrap i').animate({fontSize: '45px'});
+    $('#email').css({'background':'none'});
+    $('#env-wrap').css({'background-color':'rgba(200,236,180, 0.8)'});
+    $('#email h2').animate({marginTop: '0px'});
+    $('#email h2').css({'color':'rgba(255,255,255,0.5)'});
+    $('#email h2').css({'color':'rgba(255,255,255,1)','border-bottom':'1.5px solid rgba(200,236,180, 0.2)'});
+  });
+  $('#social-links a').hover(function() {
+    $(this).css({'color':'rgba(255,255,255,0.8)'});
+    $(this).addClass('animated swing');
+  }, function() {
+    $(this).css({'color':'rgba(255,255,255,0.5)'});
+    $(this).removeClass('animated swing');
+  });
 };
 
 // load bg slowly
@@ -127,8 +154,10 @@ function nav() {
       e.preventDefault();
       if (this.classList.contains("is-active") === true) {
         this.classList.remove("is-active");
+        $('nav').css({'position':'inherit'});
         $('#menu').removeClass('animated flipInY');
         $('#menu').addClass('animated flipOutY');
+        $('nav').css({'background':'none'});
         setTimeout(function() {
           $('#menu').css({'visibility':'hidden'});
         }, 500);
@@ -141,7 +170,9 @@ function nav() {
         $('#name').removeClass('animated flipInY');
         $('#name').addClass('animated flipOutY');
         setTimeout(function() {
+          $('nav').css({'position':'fixed'});
           $('#menu').removeClass('animated flipOutY');
+          $('nav').css({'background-color':'rgba(0,0,0,0.7)'});
           $('#menu').addClass('animated flipInY');
           $('#menu').css({'visibility':'visible'});
         }, 800);
@@ -188,12 +219,12 @@ function parallexShow() {
         }, 1000);
       }, 200);
     }
-    if (($('body').scrollTop() > ($('#work').offset().top - 120) == true) && ($('body').scrollTop() < $('#contact').offset().top == true)) {
+    if (($('body').scrollTop() > ($('#work').offset().top - 120) == true) && ($('body').scrollTop() < ($('#contact').offset().top - 200) == true)) {
       $('.projects-wrapper').removeClass('animated fadeOutDown');
       $('.projects-wrapper').addClass('animated fadeInUp');
       $('.projects-wrapper').css({'visibility': 'visible'});
     } else {
-      $('.projects-wrapper').removeClass('animated fadeIntUp');
+      $('.projects-wrapper').removeClass('animated fadeInUp');
       $('.projects-wrapper').addClass('animated fadeOutDown');
       $('.projects-wrapper').css({'visibility': 'hidden'});
     }

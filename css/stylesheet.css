@@ -11,14 +11,15 @@ body, html {
 
 .details {
   width: 100%;
-};
+}
 
 /*nav*/
 nav {
-  position: fixed;
   float: left;
   width: 100%;
-  z-index: 10000;
+  width: 100%;
+  z-index: 1000;
+  height: 100%;
 }
 
 #menu {
@@ -155,7 +156,7 @@ nav button.is-active span::after {
 #logo-wrap {
   width: 60px;
   height: 60px;
-  margin: 40px 55px;
+  margin: 25px 55px;
   position: fixed;
   opacity: 0.6;
   -webkit-transition: all 0.3;
@@ -254,29 +255,33 @@ nav button.is-active span::after {
   padding-right: 3px;
 }
 
-#home #down {
+.down, .up {
   position: absolute;
   width: 30px;
   height: 30px;
   text-align: center;
-  right: 0;
-  left: 0;
+  right: 45px;
   bottom: 30px;
   margin: auto;
-  color: rgba(255,255,255,0.4);
+  color: rgba(0,0,0,0.3);
   font-size: 28px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
   visibility: hidden;
-}
-
-#down {
-  width: 150px !important;
   text-decoration: none !important;
 }
 
-#down .mob-only {
+.up {
+  bottom: 65px;
+}
+
+.down i, .up i {
+  padding: 3px;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.down .mob-only {
   font-size: 13px;
   display: none;
   color: rgba(255,255,255,0.7);
@@ -284,8 +289,8 @@ nav button.is-active span::after {
   font-weight: 100;
 }
 
-#home #down:hover {
-  color: rgba(255,255,255,0.95);
+.down:hover, .up:hover {
+  color: rgba(0,0,0,0.6);
 }
 
 #name h2 {
@@ -622,7 +627,7 @@ nav button.is-active span::after {
 }
 
 .slick-active button {
-  background-color: rgba(200,236,180,0.2);
+  background-color: rgba(200,236,180,0.2) !important;
 }
 
 .slick-dots button:hover {
@@ -634,23 +639,100 @@ nav button.is-active span::after {
   outline: none;
 }
 
-/*mobile responsive*/
-@media only screen and (max-width: 500px) {
-  #home {
-    background-position: 0px;
-  }
+/*contact page*/
 
-  nav button {
-    margin: 20px 20px;
-  }
+#wrap-4 {
+  background-color: rgba(0,0,0,0.7);
+}
 
-  #name, #name-intro {
-    top: -100px;
-  }
+#wrap-4 .head h1 {
+  color: rgba(255,255,255,0.8);
+  margin: 0px;
+  padding-top: 90px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  width: 100%;
+  text-align: center;
+  font-size: 45px;
+}
 
-  .mob-only {
-    display: block !important;
-  }
+#wrap-4 #main {
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 250px;
+  height: 280px;
+}
+
+#wrap-4 #email {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  border-radius: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+#wrap-4 #email #env-wrap {
+  padding: 25px;
+  width: 70px;
+  height: 70px;
+  margin: 15px auto;
+  border-radius: 100%;
+  background-color: rgba(200,236,180, 0.5);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#wrap-4 #email h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  margin: auto;
+  margin-top: 35px;
+  color: rgba(255,255,255,0.5);
+  border-bottom: 1.5px solid rgba(200,236,180, 0.2);
+  padding-bottom: 8px;
+  width: 193px;
+}
+
+#env-wrap i {
+  font-size: 45px;
+  line-height: 70px;
+  color: rgba(0,0,0,0.8);
+}
+
+#main #social-links {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+}
+
+#social-links a {
+  color: rgba(255,255,255,0.5);
+  margin: 3px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+footer {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  text-align: center;
 }
 
 /*accessories*/
@@ -664,19 +746,33 @@ nav button.is-active span::after {
   color: rgba(255,255,255,0.7);
 }
 
-/*medias*/
-@media only screen and (min-width: 321px) {
+/*responsives*/
+@media only screen and (min-width: 321px) and (max-width: 600px) {
     /* Larger mobile styles (wider than 320 pixels) */
+    #home {
+      background-position: 0px;
+    }
+
+    nav button {
+      margin: 20px 20px;
+    }
+
+    #name, #name-intro {
+      top: -100px;
+    }
+
+    .mob-only {
+      display: block !important;
+    }
+    #logo-wrap {
+      margin-top: 14px;
+    }
+
+    #home .down, #home .up {
+      margin-right: -20px;
+    }
 }
 
 @media only screen and (min-width: 600px) {
     /* Tablet styles (wider than 600 pixels) */
-}
-
-@media only screen and (min-width: 1024px) {
-    /* Large laptop styles (wider than 1024 pixels) */
-}
-
-@media only screen and (min-width: 1140px) {
-    /* Desktop styles (wider than 1140 pixels) */
 }
