@@ -172,7 +172,7 @@ function nav() {
         setTimeout(function() {
           $('nav').css({'position':'fixed'});
           $('#menu').removeClass('animated flipOutY');
-          $('nav').css({'background-color':'rgba(0,0,0,0.7)'});
+          $('nav').css({'background-color':'rgba(0,0,0,0.1)'});
           $('#menu').addClass('animated flipInY');
           $('#menu').css({'visibility':'visible'});
         }, 800);
@@ -182,6 +182,7 @@ function nav() {
       $('nav button').removeClass("is-active");
       $('#menu').removeClass('animated flipInY');
       $('#menu').addClass('animated flipOutY');
+      $('nav').css({'background':'none'});
       setTimeout(function() {
         $('#menu').css({'visibility':'hidden'});
       }, 500);

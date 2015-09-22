@@ -24,7 +24,7 @@ nav {
 
 #menu {
   visibility: hidden;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.8);
 }
 
 #menu a {
@@ -85,6 +85,7 @@ nav button:focus, nav button:hover {
 
 nav button span {
   display: block;
+  z-index: 10000;
   position: absolute;
   top: 21px;
   left: 15px;
@@ -174,7 +175,7 @@ nav button.is-active span::after {
   height: 60px;
   position: absolute;
   visibility: hidden;
-  background: url('img/logo.png') no-repeat;
+  background: url('/img/logo.png') no-repeat;
   background-size: contain;
 }
 
@@ -333,7 +334,7 @@ nav button.is-active span::after {
   border-radius: 100%;
   position: relative;
   display: inline;
-  background-image: url('img/sam.jpg');
+  background-image: url('/img/sam.jpg');
   width: 200px;
   height: 200px;
   visibility: hidden;
@@ -346,7 +347,7 @@ nav button.is-active span::after {
 }
 
 #intro #toronto-img {
-  background-image: url('img/toronto.jpg');
+  background-image: url('/img/toronto.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -354,7 +355,7 @@ nav button.is-active span::after {
 }
 
 #intro #dog-img {
-  background-image: url('img/coco.jpg');
+  background-image: url('/img/coco.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -669,8 +670,8 @@ nav button.is-active span::after {
 
 #wrap-4 #email {
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
   text-align: center;
   border-radius: 100%;
   -webkit-transition: all 0.3s;
