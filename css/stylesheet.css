@@ -2,7 +2,7 @@ body, html {
   padding: 0px;
   margin: 0px;
   height: 100%;
-  background: url("img/home2.jpg") no-repeat center center fixed;
+  background: url("/img/home2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -264,7 +264,7 @@ nav button.is-active span::after {
   right: 45px;
   bottom: 30px;
   margin: auto;
-  color: rgba(0,0,0,0.3);
+  color: rgba(255,255,255,0.6);
   font-size: 28px;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -279,7 +279,7 @@ nav button.is-active span::after {
 
 .down i, .up i {
   padding: 3px;
-  background-color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.8);
 }
 
 .down .mob-only {
@@ -291,7 +291,7 @@ nav button.is-active span::after {
 }
 
 .down:hover, .up:hover {
-  color: rgba(0,0,0,0.6);
+  color: rgba(255,255,255,1);
 }
 
 #name h2 {
@@ -323,6 +323,7 @@ nav button.is-active span::after {
 #pic {
   width: 100%;
   text-align: center;
+  height: 250px;
 }
 
 #intro #me-img, #intro #img-mask, #intro #dog-img, #intro #toronto-img {
@@ -332,12 +333,16 @@ nav button.is-active span::after {
   right: 0;
   margin-top: 30px;
   border-radius: 100%;
-  position: relative;
+  position: absolute;
   display: inline;
   background-image: url('/img/sam.jpg');
   width: 200px;
   height: 200px;
   visibility: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  background-position: center;
 }
 
 #intro #img-mask {
@@ -348,18 +353,10 @@ nav button.is-active span::after {
 
 #intro #toronto-img {
   background-image: url('/img/toronto.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  background-position: center;
 }
 
 #intro #dog-img {
   background-image: url('/img/coco.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  background-position: center;
   background-position: 0 -30px;
 }
 
